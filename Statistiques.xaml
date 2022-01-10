@@ -1,0 +1,57 @@
+﻿<Window x:Class="BDDVersionWPF.Statistiques"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDDVersionWPF"
+        mc:Ignorable="d"
+        Title="Statistiques" Height="600" Width="1200">
+    <Canvas>
+        <Button x:Name="ButtonClose" Content="Fermer la fenêtre" Canvas.Left="478" Canvas.Top="525" Width="206" Click="Close" Height="36"/>
+        <ListView x:Name="listePieces" Height="167" Canvas.Left="41" Canvas.Top="63" Width="455" RenderTransformOrigin="0.821,0.46">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Quantité vendue" Width="100" DisplayMemberBinding="{Binding Quantite, Mode=TwoWay}" />
+                    <GridViewColumn Header="Pièce" Width="100" DisplayMemberBinding="{Binding No_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock actuel" Width="100" DisplayMemberBinding="{Binding Stock_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Description" Width="150" DisplayMemberBinding="{Binding Description_piece, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="QUANTITE VENDUE PAR ITEM" RenderTransformOrigin="3.33,2.054" Canvas.Left="41" Canvas.Top="10" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listeVelos" Height="167" Canvas.Left="544" Canvas.Top="63" Width="610">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Quantité vendue" Width="100" DisplayMemberBinding="{Binding QuantiteVendue, Mode=TwoWay}" />
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="60" DisplayMemberBinding="{Binding Stock_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="95" DisplayMemberBinding="{Binding Nom_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Grandeur" Width="70" DisplayMemberBinding="{Binding Grandeur_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="60" DisplayMemberBinding="{Binding Prix_bicyclette, Mode=TwoWay}" />
+                    <GridViewColumn Header="Ligne" Width="70" DisplayMemberBinding="{Binding Ligne_produit, Mode=TwoWay}" />
+                    <GridViewColumn Header="Introduction" Width="90" DisplayMemberBinding="{Binding Date_intro, Mode=TwoWay}" />
+                    <GridViewColumn Header="Discontunation" Width="100" DisplayMemberBinding="{Binding Date_discon, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="ANALYSE DES COMMANDES" RenderTransformOrigin="3.33,2.054" Canvas.Left="40" Canvas.Top="260" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Montant en moyenne d'une commande (€) : " Canvas.Left="65" Canvas.Top="304" FontSize="15"/>
+        <Label Content="Nombre de pièces en moyenne par commande : " Canvas.Left="65" Canvas.Top="339" FontSize="15"/>
+        <Label Content="Nombre de vélos en moyenne par commande : " Canvas.Left="65" Canvas.Top="374" FontSize="15" RenderTransformOrigin="0.446,0.667"/>
+        <TextBox x:Name="Montant" Height="30" Canvas.Left="414" TextWrapping="Wrap" Text="TextBox" Canvas.Top="304" Width="82"/>
+        <TextBox x:Name="Piece" Height="30" Canvas.Left="414" TextWrapping="Wrap" Text="TextBox" Canvas.Top="339" Width="82" RenderTransformOrigin="0.44,-0.933"/>
+        <TextBox x:Name="Velo" Height="30" Canvas.Left="414" TextWrapping="Wrap" Text="TextBox" Canvas.Top="374" Width="82"/>
+        <Label Content="MEILLEURS CLIENTS" RenderTransformOrigin="3.33,2.054" Canvas.Left="544" Canvas.Top="260" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listCP" Height="137" Canvas.Left="544" Canvas.Top="309" Width="610">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Fidélio" Width="60" DisplayMemberBinding="{Binding No_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nombre d'items achetés" Width="200" DisplayMemberBinding="{Binding NbCommande, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Canvas>
+</Window>

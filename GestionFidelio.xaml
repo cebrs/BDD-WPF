@@ -1,0 +1,71 @@
+﻿<Window x:Class="BDDVersionWPF.GestionFidelio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDDVersionWPF"
+        mc:Ignorable="d"
+        Title="Gestion des programmes de fidélités" Height="600" Width="1200">
+    <Canvas>
+        <Button x:Name="ButtonClose" Content="Fermer la fenêtre" Canvas.Left="503" Canvas.Top="499" Width="206" Click="Close" Height="36"/>
+        <Label Content="LISTE DES CLIENTS PAR FIDELIO" RenderTransformOrigin="3.33,2.054" Canvas.Left="41" Canvas.Top="10" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listCP1" Height="153" Canvas.Left="60" Canvas.Top="54" Width="504">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Fidélio" Width="60" DisplayMemberBinding="{Binding No_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Date de fin" Width="80" DisplayMemberBinding="{Binding Fin_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Adresse" Width="200" DisplayMemberBinding="{Binding Adresse_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Telephone_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Courriel" Width="100" DisplayMemberBinding="{Binding Courriel_client, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listCP3" Height="153" Canvas.Left="622" Canvas.Top="54" Width="504">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Fidélio" Width="60" DisplayMemberBinding="{Binding No_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Date de fin" Width="80" DisplayMemberBinding="{Binding Fin_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Adresse" Width="200" DisplayMemberBinding="{Binding Adresse_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Telephone_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Courriel" Width="100" DisplayMemberBinding="{Binding Courriel_client, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listCP2" Height="152" Canvas.Left="60" Canvas.Top="248" Width="504">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Fidélio" Width="60" DisplayMemberBinding="{Binding No_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Date de fin" Width="80" DisplayMemberBinding="{Binding Fin_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Adresse" Width="200" DisplayMemberBinding="{Binding Adresse_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Telephone_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Courriel" Width="100" DisplayMemberBinding="{Binding Courriel_client, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listCP4" Height="152" Canvas.Left="622" Canvas.Top="248" Width="504">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Fidélio" Width="60" DisplayMemberBinding="{Binding No_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Date de fin" Width="80" DisplayMemberBinding="{Binding Fin_fidelio, Mode=TwoWay}" />
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Adresse" Width="200" DisplayMemberBinding="{Binding Adresse_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Telephone_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Courriel" Width="100" DisplayMemberBinding="{Binding Courriel_client, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="ButtonJSON" Content="Générer le fichier JSON" Canvas.Left="503" Canvas.Top="440" Width="206" Click="FichierJSON" Height="36"/>
+
+    </Canvas>
+</Window>

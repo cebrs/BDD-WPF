@@ -1,0 +1,86 @@
+﻿<Window x:Class="BDDVersionWPF.GestionCommandes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDDVersionWPF"
+        mc:Ignorable="d"
+        Title="Gestion des commandes" Height="640" Width="1200">
+    <Canvas x:Name="Canvas">
+        <Label Content="LISTE DES COMMANDES" RenderTransformOrigin="3.33,2.054" Canvas.Left="41" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listCommandes" Height="165" Canvas.Left="58" Canvas.Top="36" Width="973">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="100" DisplayMemberBinding="{Binding No_commande, Mode=TwoWay}" />
+                    <GridViewColumn Header="Date de commande" Width="200" DisplayMemberBinding="{Binding Date_commande, Mode=TwoWay}" />
+                    <GridViewColumn Header="Date de livraison" Width="200" DisplayMemberBinding="{Binding Date_livraison, Mode=TwoWay}" />
+                    <GridViewColumn Header="Liste de pièces" Width="190" DisplayMemberBinding="{Binding Contient_pieces, Mode=TwoWay}" />
+                    <GridViewColumn Header="Liste de vélos" Width="190" DisplayMemberBinding="{Binding Contient_velos, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="80" DisplayMemberBinding="{Binding Prix, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listP" Height="126" Canvas.Left="58" Canvas.Top="240" Width="504">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Pièce" Width="120" DisplayMemberBinding="{Binding No_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="120" DisplayMemberBinding="{Binding Stock_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Description" Width="180" DisplayMemberBinding="{Binding Description_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="80" DisplayMemberBinding="{Binding Prix, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="listV" Height="126" Canvas.Left="58" Canvas.Top="408" Width="504">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="60" DisplayMemberBinding="{Binding Stock_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="95" DisplayMemberBinding="{Binding Nom_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Grandeur" Width="70" DisplayMemberBinding="{Binding Grandeur_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="60" DisplayMemberBinding="{Binding Prix_bicyclette, Mode=TwoWay}" />
+                    <GridViewColumn Header="Ligne" Width="70" DisplayMemberBinding="{Binding Ligne_produit, Mode=TwoWay}" />
+                    <GridViewColumn Header="Introduction" Width="90" DisplayMemberBinding="{Binding Date_intro, Mode=TwoWay}" />
+                    <GridViewColumn Header="Discontunation" Width="100" DisplayMemberBinding="{Binding Date_discon, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="AjoutP" Content="Ajouter au panier" Canvas.Left="286" Canvas.Top="371" Width="113" Height="22" Click="AjouterP" RenderTransformOrigin="2.354,3.458"/>
+        <Button x:Name="AjoutV" Content="Ajouter au panier" Canvas.Left="286" Canvas.Top="539" Width="113" Height="22" RenderTransformOrigin="0.307,0.383" Click="AjouterV"/>
+        <Label Content="NOUVELLE COMMANDE" RenderTransformOrigin="3.33,2.054" Canvas.Left="21" Canvas.Top="199" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listClient" Height="126" Canvas.Left="711" Canvas.Top="240" Width="437">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="80" DisplayMemberBinding="{Binding No_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Adresse" Width="250" DisplayMemberBinding="{Binding Adresse_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Telephone_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Courriel" Width="100" DisplayMemberBinding="{Binding Courriel_client, Mode=TwoWay}" />
+                    <GridViewColumn Header="Fidélio" Width="250" DisplayMemberBinding="{Binding No_fidelio, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listBoutique" Height="126" Canvas.Left="711" Canvas.Top="408" Width="437">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="80" DisplayMemberBinding="{Binding No_compagnie, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom_compagnie, Mode=TwoWay}" />
+                    <GridViewColumn Header="Adresse" Width="253" DisplayMemberBinding="{Binding Adresse_compagnie, Mode=TwoWay}" />
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Telephone_compagnie, Mode=TwoWay}" />
+                    <GridViewColumn Header="Courriel" Width="120" DisplayMemberBinding="{Binding Courriel_compagnie, Mode=TwoWay}" />
+                    <GridViewColumn Header="Remise" Width="60" DisplayMemberBinding="{Binding Remise, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="commandeClient" Content="Commande client" Canvas.Left="878" Canvas.Top="371" Width="113" Height="22" Click="CommandeClient" RenderTransformOrigin="2.354,3.458"/>
+        <Button x:Name="commandeBoutique" Content="Commande boutique" Canvas.Left="878" Canvas.Top="539" Width="113" Height="22" Click="CommandeBoutique" RenderTransformOrigin="2.354,3.458"/>
+        <Button x:Name="suppCommande" Content="Supprimer" Canvas.Left="1050" Canvas.Top="108" Width="113" Height="22" Click="SuppressionC" RenderTransformOrigin="2.354,3.458"/>
+        <TextBox x:Name="quantitePiece" Height="21" Canvas.Left="172" TextWrapping="Wrap" Text="Quantité à ajouter" Canvas.Top="371" Width="109"/>
+        <TextBox x:Name="quantiteVelos" Height="21" Canvas.Left="172" TextWrapping="Wrap" Text="Quantité à ajouter" Canvas.Top="539" Width="109"/>
+        <TextBox x:Name="numCommande" Height="21" Canvas.Left="300" TextWrapping="Wrap" Text="Numéro de la commande" Canvas.Top="214" Width="147"/>
+        <Button x:Name="ButtonClose" Content="Fermer la fenêtre" Canvas.Left="536" Canvas.Top="544" Width="207" Click="Close" Height="24"/>
+    </Canvas>
+
+</Window>

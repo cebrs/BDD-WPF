@@ -1,0 +1,76 @@
+﻿<Window x:Class="BDDVersionWPF.GestionStocks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDDVersionWPF"
+        mc:Ignorable="d"
+        Title="Gestion des stocks" Height="600" Width="1200">
+    <Canvas x:Name="Canvas2">
+        <ListView x:Name="listP" Height="170" Canvas.Left="28" Canvas.Top="57" Width="437">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Pièce" Width="120" DisplayMemberBinding="{Binding No_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="120" DisplayMemberBinding="{Binding Stock_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Description" Width="200" DisplayMemberBinding="{Binding Description_piece, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="LISTE DES PIECES DE RECHANGES" RenderTransformOrigin="3.33,2.054" Canvas.Left="10" Canvas.Top="18" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listV" Height="204" Canvas.Left="28" Canvas.Top="303" Width="609">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="60" DisplayMemberBinding="{Binding No_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="60" DisplayMemberBinding="{Binding Stock_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Nom" Width="95" DisplayMemberBinding="{Binding Nom_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Grandeur" Width="70" DisplayMemberBinding="{Binding Grandeur_velo, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="60" DisplayMemberBinding="{Binding Prix_bicyclette, Mode=TwoWay}" />
+                    <GridViewColumn Header="Ligne" Width="70" DisplayMemberBinding="{Binding Ligne_produit, Mode=TwoWay}" />
+                    <GridViewColumn Header="Introduction" Width="90" DisplayMemberBinding="{Binding Date_intro, Mode=TwoWay}" />
+                    <GridViewColumn Header="Discontunation" Width="100" DisplayMemberBinding="{Binding Date_discon, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="LISTE DES BICYCLETTES" RenderTransformOrigin="3.33,2.054" Canvas.Left="10" Canvas.Top="259" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="22"/>
+        <ListView x:Name="listPR" Height="120" Canvas.Left="566" Canvas.Top="44" Width="437">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Pièce" Width="120" DisplayMemberBinding="{Binding No_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="120" DisplayMemberBinding="{Binding Stock_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Description" Width="200" DisplayMemberBinding="{Binding Description_piece, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Liste des pièces à recommander" RenderTransformOrigin="3.33,2.054" Canvas.Left="550" Canvas.Top="10" Width="358" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="18"/>
+        <ListView x:Name="listFourni" Height="93" Canvas.Left="566" Canvas.Top="166" Width="437">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Siret" Width="110" DisplayMemberBinding="{Binding Siret, Mode=TwoWay}"/>
+                    <GridViewColumn Header="Nom" Width="80" DisplayMemberBinding="{Binding Nom_entreprise, Mode=TwoWay}"/>
+                    <GridViewColumn Header="No catalogue" Width="90" DisplayMemberBinding="{Binding No_catalogue, Mode=TwoWay}"/>
+                    <GridViewColumn Header="Délai" Width="53" DisplayMemberBinding="{Binding Delai_livraison, Mode=TwoWay}"/>
+                    <GridViewColumn Header="Prix" Width="50" DisplayMemberBinding="{Binding Prix_piece, Mode=TwoWay}"/>
+                    <GridViewColumn Header="Libellé" Width="50" DisplayMemberBinding="{Binding Libelle, Mode=TwoWay}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="selectionner" Content="Voir les fournisseurs" Canvas.Left="1022" Canvas.Top="70" Width="148" Click="Selection" Height="24" RenderTransformOrigin="0.399,-1.417"/>
+        <Button x:Name="commander" Content="Commander" Canvas.Left="1022" Canvas.Top="125" Width="148" Click="Commande" Height="24" RenderTransformOrigin="0.466,0.042"/>
+        <TextBox x:Name="quantitePiece" Height="21" Canvas.Left="1022" TextWrapping="Wrap" Text="Quantité à ajouter" Canvas.Top="99" Width="148"/>
+        <ListView x:Name="listPV" Height="157" Canvas.Left="678" Canvas.Top="349" Width="437" RenderTransformOrigin="0.821,0.46">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Pièce" Width="100" DisplayMemberBinding="{Binding No_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="100" DisplayMemberBinding="{Binding Stock_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Description" Width="155" DisplayMemberBinding="{Binding Description_piece, Mode=TwoWay}" />
+                    <GridViewColumn Header="Quantité" Width="80" DisplayMemberBinding="{Binding Prix, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Liste des pièces contenues dans le vélo sélectionné" RenderTransformOrigin="3.33,2.054" Canvas.Left="669" Canvas.Top="315" Width="446" Cursor="None" IsEnabled="False" FontWeight="Bold" FontSize="18"/>
+        <Button x:Name="selectionnerVélo" Content="Sélectionner ce vélo" Canvas.Left="489" Canvas.Top="512" Width="148" Click="SelectionVelo" Height="24"/>
+        <Button x:Name="ButtonClose" Content="Fermer la fenêtre" Canvas.Left="10" Canvas.Top="525" Width="187" Click="Close" Height="36" RenderTransformOrigin="0.686,0.415"/>
+        <Button x:Name="creerVelo" Content="Créer ce vélo" Canvas.Left="967" Canvas.Top="512" Width="148" Click="CreerVelo" Height="24"/>
+        <Button x:Name="ButtonXML" Content="Générer le fichier XML" Canvas.Left="1022" Canvas.Top="212" Width="148" Click="XML" Height="21"/>
+    </Canvas>
+</Window>
