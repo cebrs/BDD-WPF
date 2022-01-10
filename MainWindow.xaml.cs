@@ -24,7 +24,7 @@ namespace BDDVersionWPF
     {
         public static MySqlConnection connexion = new MySqlConnection("SERVER=localhost;PORT=3306;" +
                                         "DATABASE=veloMax;" +
-                                        "UID=root;PASSWORD=root");
+                                        "UID={nom_utilisateur};PASSWORD={mdp_utilisateur}");
         public MainWindow()
         {
             InitializeComponent();
